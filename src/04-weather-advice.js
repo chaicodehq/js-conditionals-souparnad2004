@@ -22,4 +22,20 @@
  */
 export function getWeatherAdvice(temperature, isRaining) {
   // Your code here
+  let ans;
+
+  if(temperature >= 35) ans = "Too hot for hiking - stay indoors and hydrate";
+  else if(temperature >= 25) {
+    if(isRaining) ans = "Warm but rainy - consider indoor activities";
+    else ans = "Great weather for hiking - don't forget sunscreen";
+  }else if(temperature >= 15) {
+    if(isRaining) ans = "Cool and rainy - bring waterproof gear if hiking";
+    else ans = "Perfect hiking weather - enjoy the trails";
+  }else if(temperature >= 5) {
+    if(isRaining) ans = "Cold and wet - best to stay indoors";
+    else ans = "Chilly - wear layers for your hike";
+  } else {
+    ans = "Too cold - stay warm indoors"
+  }
+  return ans;
 }
